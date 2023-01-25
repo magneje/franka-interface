@@ -16,6 +16,7 @@
 #include "franka-interface/feedback_controller/noop_feedback_controller.h"
 #include "franka-interface/feedback_controller/pass_through_feedback_controller.h"
 #include "franka-interface/feedback_controller/set_internal_impedance_feedback_controller.h"
+#include "franka-interface/feedback_controller/cartesian_variable_impedance_feedback_controller.h"
 
 FeedbackController* FeedbackControllerFactory::getFeedbackControllerForSkill(SharedBufferTypePtr buffer, SensorDataManager* sensor_data_manager){
   FeedbackControllerType feedback_controller_type = static_cast<FeedbackControllerType>(buffer[0]);
@@ -56,6 +57,10 @@ FeedbackController* FeedbackControllerFactory::getFeedbackControllerForSkill(Sha
     case FeedbackControllerType::SetInternalImpedanceFeedbackController:
       feedback_controller_type_name = "SetInternalImpedanceFeedbackController";
       feedback_controller = new SetInternalImpedanceFeedbackController(buffer, sensor_data_manager);
+      break;
+    case FeedbackControllerType::CartesianVariableImpedanceFeedbackController:
+      feedback_controller_type_name = "CartesianVariableImpedanceFeedbackController";
+      feedback_controller = new CartesianVariableImpedanceFeedbackController(buffer, sensor_data_manager);
       break;
     default:
       std::cout << "Cannot create Feedback Controller with type: " << 

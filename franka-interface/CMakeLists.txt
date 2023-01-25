@@ -37,6 +37,7 @@ add_library(franka-interface SHARED
   src/feedback_controller/noop_feedback_controller.cpp
   src/feedback_controller/pass_through_feedback_controller.cpp
   src/feedback_controller/set_internal_impedance_feedback_controller.cpp
+  src/feedback_controller/cartesian_variable_impedance_feedback_controller.cpp
   src/skills/base_meta_skill.cpp
   src/skills/base_skill.cpp
   src/skills/cartesian_pose_skill.cpp

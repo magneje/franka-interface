@@ -70,6 +70,7 @@ enum class FeedbackControllerType : uint8_t {
     NoopFeedbackController,
     PassThroughFeedbackController,
     SetInternalImpedanceFeedbackController,
+    CartesianVariableImpedanceFeedbackController,
 };
 
 // Enum for Termination Handler Types
@@ -106,6 +107,7 @@ enum class SensorDataMessageType : uint8_t {
   POSE_POSITION_VELOCITY,
   POSE_POSITION,
   SHOULD_TERMINATE,
+  CARTESIAN_VARIABLE_IMPEDANCE,
 };
 
 #endif  // FRANKA_INTERFACE_COMMON_DEFINITIONS_H_

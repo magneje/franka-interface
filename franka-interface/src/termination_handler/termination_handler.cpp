@@ -25,7 +25,7 @@ void TerminationHandler::check_terminate_time(TrajectoryGenerator *trajectory_ge
 }
 
 void TerminationHandler::check_terminate_virtual_wall_collisions(const franka::RobotState &robot_state, franka::Model *robot_model) {
-  if (!done_) {
+/*  if (!done_) {
     int n_frame = 0;
     // Check all joints that are not base or EE
     for (franka::Frame frame = franka::Frame::kJoint2; frame <= franka::Frame::kFlange; frame++) {
@@ -46,7 +46,7 @@ void TerminationHandler::check_terminate_virtual_wall_collisions(const franka::R
       n_frame++;
       if (done_) { break; }
     }
-  }
+  }*/
 }
 
 void TerminationHandler::parse_sensor_data(const franka::RobotState &robot_state) {

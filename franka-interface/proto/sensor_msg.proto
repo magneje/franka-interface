@@ -78,3 +78,12 @@ message ForcePositionControllerSensorMessage {
   repeated double force_kps_joint = 6;
   repeated double selection = 7;
 }
+
+message CartesianVariableImpedanceControllerSensorMessage {
+  required int32 id = 1;
+  required double timestamp = 2;
+
+  repeated double stiffness = 3;
+  repeated double damping = 4;
+  repeated double mass = 5;
+}

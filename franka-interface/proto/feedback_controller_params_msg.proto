@@ -30,3 +30,11 @@ message ForcePositionFeedbackControllerMessage {
   repeated double selection = 5;
   required bool use_cartesian_gains = 6;
 }
+
+message CartesianVariableImpedanceFeedbackControllerMessage {
+  repeated double stiffness = 1;
+  repeated double damping = 2;
+  repeated double mass = 3;
+  required bool use_commanded_damping = 4;
+  required bool use_commanded_mass = 5;
+}
