@@ -26,7 +26,7 @@ class CartesianVariableImpedanceFeedbackController : public FeedbackController {
   const franka::Model *model_;
   bool use_commanded_damping_;
   bool use_commanded_mass_;
-  bool f_ext_initialized_ = 0;
+  bool use_inertia_shaping_ = 0;
 
   Eigen::Matrix<double, 6, 6> stiffness_ = Eigen::MatrixXd::Zero(6, 6);
   Eigen::Matrix<double, 6, 6> damping_ = Eigen::MatrixXd::Zero(6, 6);
